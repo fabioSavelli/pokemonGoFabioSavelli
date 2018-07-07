@@ -30,7 +30,7 @@ public class StartController {
 	@Autowired
 	IPokemonManager pokemonManager;
 	
-	//@RequestMapping(method = RequestMethod.GET, path = "/")
+	@RequestMapping(method = RequestMethod.GET, path = "/")
 	public String goToHome() {
 		
 		Statistica statistiche = new Statistica();
