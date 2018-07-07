@@ -6,7 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
+import org.springframework.stereotype.Controller;
 
+
+@Controller
 @SpringBootApplication
 public class PokemonApplication {
 
@@ -32,5 +35,11 @@ public class PokemonApplication {
 		tilesViewResolver.setViewClass(TilesView.class);
 
 		return tilesViewResolver;
+	}
+
+	@RequestMapping(method = RequestMethod.GET, path = "/")
+	public String goToHome() {
+		System.out.println("START");
+		return ConstantsWeb.home;
 	}
 }
